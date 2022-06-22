@@ -52,6 +52,11 @@ app.MapPost("/ExportSFDTtoPDF", (SaveParameter data) =>
     Microsoft.AspNetCore.Mvc.FileStreamResult fileStream = documentEditorHelper.ExportSFDTtoPDF(data);
     return Results.File(fileStream.FileStream, fileStream.ContentType, fileStream.FileDownloadName);
 });
+app.MapPost("/", () =>
+{
+    
+    return "server is running";
+});
 
 
 app.Run();
